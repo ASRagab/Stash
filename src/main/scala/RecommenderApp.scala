@@ -55,7 +55,7 @@ class Recommender(corpus: Map[Int, String], nGramSize: Int = 3) {
     val article = a.sortBy(a => a.head)
     val liked = test.sortBy(t => t.head)
     
-    //A match is when two
+    //A match is when two groups have at least one element in common
     article.zip(liked).count(p => (p._1 intersect p._2).lengthCompare(0) > 0)
   }
 }
